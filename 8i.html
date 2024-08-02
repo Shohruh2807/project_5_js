@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tanga</title>
+</head>
+<body>
+<p>tanga chikka yoki pukka bilmadim kim o'ylab topgan</p>
+
+<button
+        onclick="
+    playGame('chikka')
+"
+>Chikka</button>
+<button
+        onclick="
+    playGame('pukka')
+
+"
+>Pukka</button>
+</body>
+<script>
+    function playGame(taxmin){
+        randomNumber = Math.random()
+
+        let computer =''
+        if(randomNumber >= 0 && randomNumber <1/2){
+            computer = ('chikka')
+        }else{
+            computer = ('pukka')}
+
+        let result = ''
+
+        if(computer === taxmin){
+            result = 'G\'alaba qozondingiz'
+        }
+        else{
+            result = 'Yutqazdingiz'
+        }
+        alert(
+            `Siz pukka tanladingiz. Tangada esa ${computer} tushdi.Natijada esa ${result}`
+        )}
+</script>
+</html>
