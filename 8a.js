@@ -1,5 +1,6 @@
 'use strict'
 const productsOfAmazon={
-    basketball: '2095 sent'
+    nameOfProduct:'basketball',
+    priceOfProduct: 2095
 }
 console.log(productsOfAmazon)
