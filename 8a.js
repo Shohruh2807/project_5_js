@@ -1,6 +1,6 @@
 'use strict'
 const productsOfAmazon={
-    nameOfProduct:'basketball',
-    priceOfProduct: 2095
+    nameOfProduct:'gandboll',
+    priceOfProduct: 3000
 }
 console.log(productsOfAmazon)
