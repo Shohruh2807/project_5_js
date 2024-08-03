@@ -5,7 +5,7 @@
     <title>tanga</title>
 </head>
 <body>
-<p>tanga chikka yoki pukka bilmadim kim o'ylab topgan</p>
+<p>tanga chikka yoki pukka</p>
 
 <button
         onclick="
@@ -18,8 +18,24 @@
 
 "
 >Pukka</button>
+<button onclick="
+    hisob.loses=0
+    hisob.wins=0
+    alert('O\'yin qayta boshlandi hisoblar 0 ga tenglashtirildi')
+    localStorage.removeItem('hisob')
+">
+    Qayta boshlash
+</button>
 </body>
 <script>
+    let hisob=JSON.parse(localStorage.getItem('hisob'))
+
+    if (hisob === null){
+        hisob = {
+            loses: 0,
+            wins: 0
+        }
+    }
     function playGame(taxmin){
         const randomNumber = Math.random()
 
@@ -33,12 +49,17 @@
 
         if(computer === taxmin){
             result = 'G\'alaba qozondingiz'
+            hisob.wins++
         }
         else{
             result = 'Yutqazdingiz'
+            hisob.loses++
         }
+        localStorage.setItem('hisob',JSON.stringify(hisob))
         alert(
-            `Siz pukka tanladingiz. Tangada esa ${computer} tushdi.Natijada esa ${result}`
+            `Siz ${taxmin} tanladingiz. Tangada esa ${computer} tushdi.Natijada esa ${result}
+             G'alaba soni: ${hisob.wins}
+             Mag'lubiyat soni: ${hisob.loses}`
         )}
 </script>
 </html>
